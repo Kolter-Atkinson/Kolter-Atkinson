@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Can You Guess The Number?</h1>
+    </div>
+    <div class="explain">
+      <p>
+        Can you guess what random number between 1-10 we will be picking each
+        time? With each guess the number will change, so if you're feeling
+        lucky, venture a guess!
+      </p>
+      <script>
+	      while(true) {
+		      const randomNumber = Math.floor(Math.random() * 10);
+		      const guess = prompt("Pick a number between 0-10");
+		      if(randomNumber === Number(guess)) {
+			      alert("You Did It! Congrats!");
+			      break;
+		      } else {
+			      alert("Wrong number, try again!");
+			      console.log(`You guessed ${guess}, but the right answer was ${randomNumber}`);
+		      }
+	      }
+      </script>
+    </div>
+  </body>
+</html>
