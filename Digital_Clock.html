@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        display: inline;
+      }
+
+      p {
+        display: inline;
+	text-align: center;
+      }
+
+      .numbers {
+	      width: 300px;
+	      margin: auto auto;
+      }
+
+      .clock {
+        border: 10px solid white;
+        width: 400px;
+        margin: auto auto;
+	margin-top: 20%;
+        padding: 15px;
+        font-size: 90px;
+        font-weight: 700;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="numbers">
+        <p class="time hours"></p>
+        <p class="time minutes"></p>
+        <p class="time seconds"></p>
+      </div>
+    </div>
+
+    <script>
+      const hours = document.querySelector(".hours");
+      const minutes = document.querySelector(".minutes");
+      const seconds = document.querySelector(".seconds");
+
+      const time = () => {
+        console.log("working");
+        const now = new Date();
+
+        const hour = now.getHours();
+        const hr = hour - 12;
+        if (hour < 10) {
+          hours.innerText = `0${hr}:`;
+        } else {
+          hours.innerText = `${hr}:`;
+        }
+
+        const min = now.getMinutes();
+        if (min < 10) {
+          minutes.innerText = `0${min}`;
+        } else {
+          minutes.innerText = `${min}`;
+        }
+
+        const sec = now.getSeconds();
+        if (sec < 10) {
+          seconds.innerText = `0${sec}`;
+        } else {
+          seconds.innerText = `${sec}`;
+        }
+      };
+
+      setInterval(time, 1000);
+    </script>
+  </body>
+</html>
